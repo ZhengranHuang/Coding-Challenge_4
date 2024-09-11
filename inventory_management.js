@@ -2,7 +2,7 @@
 
 const inventory = [
 { name: 'Laptop', price: 1200, quantity: 10, lowStockLevel: 3 },
-{ name: 'Smartphone', price: 800, quantity: 5, lowStockLevel: 2 },
+{ name: 'Smartphone', price: 800, quantity: 2, lowStockLevel: 2 },
 { name: 'Tablet', price: 400, quantity: 7, lowStockLevel: 1 },
 { name: 'Headphones', price: 100, quantity: 15, lowStockLevel: 5 },
 { name: 'Smartwatch', price: 250, quantity: 3, lowStockLevel: 1 }
@@ -41,7 +41,24 @@ if (quantityaftersold <= product.lowStockLevel) {
   console.log(`Quantityaftersold: ${quantityaftersold}`);
   console.log(`Stock level(INTASK2): ${stocklevel}`);
 }
-//check the output 'Laptop -7'
+//check the output 'Laptop's quantity-7'
 updateStock(inventory[0], 7)
 
+//Task 4:Create a Function to Check Low Stock Products
+function checklowStock(inventory){
+    let checklow;
+    inventory.forEach((product) => {
+        if (product.quantity <= product.lowStockLevel){
+            checklow = `Low`;
+            console.log(`"${product.name}" stock level is ${checklow}!`)
+        }
+        else {checklow = `"${product.name}" stock level is good!`;
+            console.log(`${checklow}`)
+        }
+    }
+)
+}
+//check the output
+//change the quantity of smartphone to 2
+checklowStock(inventory);
 
