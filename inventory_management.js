@@ -62,3 +62,11 @@ function checklowStock(inventory){
 //change the quantity of smartphone to 2
 checklowStock(inventory);
 
+//Task 5:Create a Function to Calculate Total Inventory Value
+function calculateInventoryValue(inventory){
+let total = inventory.reduce((nothing, product) => {
+    return nothing +(product.quantity * product.price);
+},0);
+console.log(`Total Values is $${total}`);}
+//check the output
+calculateInventoryValue(inventory);
