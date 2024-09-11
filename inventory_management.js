@@ -20,10 +20,28 @@ function displayProductDetails(product) {
     }
 // use if to check the stock status.
 console.log(`Product: ${product.name}`);
-console.log(`Price: $${product.price0}`);
+console.log(`Price: $${product.price}`);
 console.log(`Quantity in Stock: ${product.quantity}`);
-console.log(`Stock level: ${stocklevel}`);
+console.log(`Stock level(INTASK1): ${stocklevel}`);
 //accepts a product object and logs the product’s name, price, quantity in stock, and stock status
 }
-//check the output
-inventory.forEach(displayProductDetails);
+//check the output 'Tablet'
+displayProductDetails(inventory[2])
+
+//Task 3:Create a Function to Update Product Stock After Sales
+
+function updateStock(product, unitsSold){
+let quantityaftersold = product.quantity - unitsSold;
+let stocklevel;
+if (quantityaftersold <= product.lowStockLevel) {
+    stocklevel = 'Low Stock';
+  } else if (quantityaftersold > product.lowStockLevel){
+    stocklevel = 'In Stock';
+  } console.log(`UnitsSold: ${unitsSold}`);
+  console.log(`Quantityaftersold: ${quantityaftersold}`);
+  console.log(`Stock level(INTASK2): ${stocklevel}`);
+}
+//check the output 'Laptop -7'
+updateStock(inventory[0], 7)
+
+
