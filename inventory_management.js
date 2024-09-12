@@ -22,7 +22,7 @@ function displayProductDetails(product) {
 console.log(`Product: ${product.name}`);
 console.log(`Price: $${product.price}`);
 console.log(`Quantity in Stock: ${product.quantity}`);
-console.log(`Stock level(INTASK1): ${stocklevel}`);
+console.log(`Stock level(INTASK2): ${stocklevel}`);
 //accepts a product object and logs the product’s name, price, quantity in stock, and stock status
 }
 //check the output 'Tablet'
@@ -37,9 +37,10 @@ if (quantityaftersold <= product.lowStockLevel) {
     stocklevel = 'Low Stock';
   } else if (quantityaftersold > product.lowStockLevel){
     stocklevel = 'In Stock';
-  } console.log(`UnitsSold: ${unitsSold}`);
+  } console.log(`Product Name: ${product.name}`)
+  console.log(`UnitsSold: ${unitsSold}`);
   console.log(`Quantityaftersold: ${quantityaftersold}`);
-  console.log(`Stock level(INTASK2): ${stocklevel}`);
+  console.log(`Stock level(INTASK3): ${stocklevel}`);
 }
 //check the output 'Laptop's quantity-7'
 updateStock(inventory[0], 7)
@@ -70,3 +71,17 @@ let total = inventory.reduce((nothing, product) => {
 console.log(`Total Values is $${total}`);}
 //check the output
 calculateInventoryValue(inventory);
+
+//Task 6:Create a Function to Process a Sale
+function processSale(productname, unitsSold){
+const product = inventory.find(item => item.name === productname)
+if (product) {
+updateStock(product, unitsSold);
+}
+else{
+console.log(`The product is not in the inventory`)
+}
+}
+//check the output
+processSale('Laptop', 1)
+processSale('Noting', 1)
